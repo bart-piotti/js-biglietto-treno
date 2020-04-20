@@ -2,7 +2,7 @@
 var km = prompt("Quanti Km devi percorrere?")
 var eta = prompt("Quanti anni hai?")
 
-    //Ricomincia se l'età o i km non sono espressi in cifre
+    //Messaggi di errore se l'età o i km non sono espressi in cifre
     if (isNaN(km) == true) {
         km = prompt("Inserire un numero valido. Quanti Km devi percorrere?");
     }
@@ -11,6 +11,15 @@ var eta = prompt("Quanti anni hai?")
         eta = prompt("Inserire un numero valido. Quanti anni hai?")
     }
 
+    if (isNaN(km) == true) {
+        km = prompt("Mi stai stufando! Inserire un numero valido. Quanti Km devi percorrere?");
+    }
+
+    if (isNaN(eta) == true) {
+        eta = prompt("Mi stai stufando! Inserire un numero valido. Quanti anni hai?")
+    }
+
+    //Non so come far andare in loop le operazioni sopra dunque ricarico la pagina
     if (isNaN(km) == true || isNaN(eta) == true) {
         window.location.reload();
     }
