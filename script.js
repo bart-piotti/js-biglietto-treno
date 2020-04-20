@@ -4,7 +4,9 @@ var eta = prompt("Quanti anni hai?")
 
 //Applico lo sconto a seconda dell'età
 if (eta < 18) {
+    //Calcolo il prezzo del biglietto
     var prezzo = km * 0.21 / 100 * 80;
+
     //Faccio in modo che siano sempre presenti 2 cifre decimali (fino all'ordine delle centinaia per pragmatismo)
     var prezzo_arrotondato = prezzo.toString().substr(0, 4);
         if (prezzo > 9.99) {
@@ -13,10 +15,18 @@ if (eta < 18) {
         if (prezzo > 99.99) {
             var prezzo_arrotondato = prezzo.toString().substr(0, 6);
         }
+
+    //Calcolo lo sconto di cui ha usufruito l'utente
+    var sconto = (km * 0.21) - prezzo;
+
+    //Stampo lo sconto e il costo del biglietto
+    console.log("Hai usufruito dello sconto Young Traveler del 20% ammontante a: " + sconto + " Euro");
+    console.log("Il prezzo del biglietto scontato è: " + prezzo_arrotondato + " Euro");
 }
 
 else if (eta >= 60) {
     prezzo = km * 0.21 / 100 * 60;
+
     //Faccio in modo che siano sempre presenti 2 cifre decimali (fino all'ordine delle centinaia per pragmatismo)
     prezzo_arrotondato = prezzo.toString().substr(0, 4);
         if (prezzo > 9.99) {
@@ -25,6 +35,13 @@ else if (eta >= 60) {
         if (prezzo > 99.99) {
             var prezzo_arrotondato = prezzo.toString().substr(0, 6);
         }
+
+    //Calcolo lo sconto di cui ha usufruito l'utente
+    var sconto = (km * 0.21) - prezzo;
+
+    //Stampo lo sconto e il costo del biglietto
+    console.log("Hai usufruito dello sconto Expert Traveler del 40% ammontante a: " + sconto + " Euro");
+    console.log("Il prezzo del biglietto scontato è: " + prezzo_arrotondato + " Euro");
 }
 
 else {
@@ -37,7 +54,7 @@ else {
         if (prezzo > 99.99) {
             var prezzo_arrotondato = prezzo.toString().substr(0, 6);
         }
-}
 
-// stampo il prezzo del biglietto
-console.log("Il prezzo del biglietto è: " + prezzo_arrotondato + " Euro");
+    // stampo il prezzo del biglietto
+    console.log("Il prezzo del biglietto è: " + prezzo_arrotondato + " Euro");
+}
