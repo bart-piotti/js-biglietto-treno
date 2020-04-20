@@ -18,9 +18,17 @@ if (eta < 18) {
 
     //Calcolo lo sconto di cui ha usufruito l'utente
     var sconto = (km * 0.21) - prezzo;
+    //Arrotondo lo sconto
+    sconto_arrotondato = sconto.toString().substr(0, 4);
+        if (sconto > 9.99) {
+            sconto_arrotondato = sconto.toString().substr(0, 5);
+        }
+        if (sconto > 99.99) {
+            sconto_arrotondato = sconto.toString().substr(0, 6);
+        }
 
     //Stampo lo sconto e il costo del biglietto
-    console.log("Hai usufruito dello sconto Young Traveler del 20% ammontante a: " + sconto + " Euro");
+    console.log("Hai usufruito dello sconto Young Traveler del 20% ammontante a: " + sconto_arrotondato + " Euro");
     console.log("Il prezzo del biglietto scontato è: " + prezzo_arrotondato + " Euro");
 }
 
@@ -38,9 +46,16 @@ else if (eta >= 60) {
 
     //Calcolo lo sconto di cui ha usufruito l'utente
     var sconto = (km * 0.21) - prezzo;
+    sconto_arrotondato = sconto.toString().substr(0, 4);
+        if (sconto > 9.99) {
+            sconto_arrotondato = sconto.toString().substr(0, 5);
+        }
+        if (sconto > 99.99) {
+            sconto_arrotondato = sconto.toString().substr(0, 6);
+        }
 
     //Stampo lo sconto e il costo del biglietto
-    console.log("Hai usufruito dello sconto Expert Traveler del 40% ammontante a: " + sconto + " Euro");
+    console.log("Hai usufruito dello sconto Expert Traveler del 40% ammontante a: " + sconto_arrotondato + " Euro");
     console.log("Il prezzo del biglietto scontato è: " + prezzo_arrotondato + " Euro");
 }
 
