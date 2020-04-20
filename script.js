@@ -2,6 +2,11 @@
 var km = prompt("Quanti Km devi percorrere?")
 var eta = prompt("Quanti anni hai?")
 
+    //Ricomincia se l'età o i km non sono espressi in cifre
+    if (isNaN(km) == true || isNaN(eta) == true) {
+        window.location.reload();
+    }
+
     //Applico lo sconto a seconda dell'età
     if (eta < 18) {
         //Calcolo il prezzo del biglietto
